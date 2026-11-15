@@ -1,4 +1,3 @@
-# Force GitHub actions re-index
 name: Render Video
 
 on:
@@ -7,7 +6,7 @@ on:
       composition_id:
         description: 'The Remotion Composition ID to render'
         required: true
-        default: 'BridgeShort' # Change to your custom composition ID when ready
+        default: 'EvolutionShort'
 
 jobs:
   render:
@@ -21,7 +20,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
       - name: Install dependencies
         run: npm install
@@ -34,4 +32,3 @@ jobs:
         with:
           name: animated-short-output
           path: out/video.mp4
-          
