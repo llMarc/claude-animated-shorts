@@ -24,7 +24,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1 # Ensures clean dependency install
+        run: npm install
 
       - name: Render video with Remotion
         run: npx remotion render ${{ github.event.inputs.composition_id }} out/video.mp4 --scale 1.3333
