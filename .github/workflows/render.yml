@@ -22,7 +22,7 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peers-deps
 
       - name: Render video with Remotion
         run: npx remotion render ${{ github.event.inputs.composition_id }} out/video.mp4 --scale 1.3333
