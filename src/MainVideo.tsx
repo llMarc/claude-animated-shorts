@@ -1,8 +1,8 @@
 import { AbsoluteFill, Sequence } from 'remotion';
 import { SHOTS } from './story';
-import { IntroScene } from './scenes/IntroScene';
-import { JourneyScene } from './scenes/JourneyScene';
-import { ClimaxScene } from './scenes/ClimaxScene';
+import { PerfectionScene } from './scenes/PerfectionScene';
+import { ProgressScene } from './scenes/ProgressScene';
+import { CollisionScene } from './scenes/CollisionScene';
 import { OutroScene } from './scenes/OutroScene';
 
 export const MainVideo = () => {
@@ -10,24 +10,24 @@ export const MainVideo = () => {
 
   return (
     <AbsoluteFill style={{ backgroundColor: '#F5EFE2' }}>
-      {/* Scene 1: Intro */}
+      {/* Scene 1: The Perfectionist */}
       <Sequence from={accumulatedFrames} durationInFrames={SHOTS[0].durationInFrames}>
-        <IntroScene />
+        <PerfectionScene />
       </Sequence>
       
-      {/* Scene 2: Journey (automatically offsets start time) */}
+      {/* Scene 2: The Pragmatist */}
       {(accumulatedFrames += SHOTS[0].durationInFrames) && null}
       <Sequence from={accumulatedFrames} durationInFrames={SHOTS[1].durationInFrames}>
-        <JourneyScene />
+        <ProgressScene />
       </Sequence>
 
-      {/* Scene 3: Climax */}
+      {/* Scene 3: The Collision */}
       {(accumulatedFrames += SHOTS[1].durationInFrames) && null}
       <Sequence from={accumulatedFrames} durationInFrames={SHOTS[2].durationInFrames}>
-        <ClimaxScene />
+        <CollisionScene />
       </Sequence>
 
-      {/* Scene 4: Outro */}
+      {/* Scene 4: The Outro Title Card */}
       {(accumulatedFrames += SHOTS[2].durationInFrames) && null}
       <Sequence from={accumulatedFrames} durationInFrames={SHOTS[3].durationInFrames}>
         <OutroScene />
