@@ -1,3 +1,4 @@
+# Force GitHub actions re-index
 name: Render Video
 
 on:
