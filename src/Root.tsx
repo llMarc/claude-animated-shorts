@@ -2,13 +2,12 @@ import { Composition, registerRoot } from 'remotion';
 import { MainVideo } from './MainVideo';
 import { SHOTS } from './story';
 
-// Automatically sums up all scene durations
 const totalFrames = SHOTS.reduce((acc, shot) => acc + shot.durationInFrames, 0);
 
 export const Root = () => {
   return (
     <Composition
-      id="FullLongFormShort"
+      id="PerfectionVsProgress"
       component={MainVideo}
       durationInFrames={totalFrames}
       fps={24}
