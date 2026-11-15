@@ -1,4 +1,4 @@
-import { AbsoluteFill, useCurrentFrame, useVideoConfig } from 'remotion';
+import { AbsoluteFill, Composition, useCurrentFrame, useVideoConfig } from 'remotion';
 import { SHOTS, CAMS, DOF_AT } from './story';
 
 export const EvolutionShort = () => {
@@ -73,3 +73,22 @@ export const EvolutionShort = () => {
     </AbsoluteFill>
   );
 };
+
+// 1. Create a Root wrapper component that defines your Remotion Composition
+import { registerRoot } from 'remotion';
+
+export const Root = () => {
+  return (
+    <Composition
+      id="EvolutionShort"
+      component={EvolutionShort}
+      durationInFrames={300} // Adjust this to match your total shot lengths if needed
+      fps={30}
+      width={1080}
+      height={1920}
+    />
+  );
+};
+
+// 2. Register the Root component properly
+registerRoot(Root);
