@@ -25,7 +25,7 @@ jobs:
         run: npm install --force
 
       - name: Render video with Remotion
-        run: npx remotion render ${{ github.event.inputs.composition_id }} out/video.mp4 --scale 1.3333
+        run: npx remotion render src/Root.tsx ${{ github.event.inputs.composition_id }} out/video.mp4 --scale 1.3333
 
       - name: Upload video artifact
         uses: actions/upload-artifact@v4
